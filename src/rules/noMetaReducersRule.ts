@@ -19,9 +19,15 @@ export class Rule extends Lint.Rules.AbstractRule {
 }
 
 function walk(ctx: Lint.WalkContext<void>) {
-  const hits = tsquery(ctx.sourceFile, Rule.queryAssignment, {
+  const assignmentHits = tsquery(ctx.sourceFile, Rule.queryAssignment, {
     visitAllChildren: true,
   })
+
+  const importHits = tsquery(ctx.sourceFile, Rule.queryImport, {
+    visitAllChildren: true,
+  })
+
+  const hits = assignmentHits.concat(importHits)
 
   hits.forEach(hit => {
     const fix = Lint.Replacement.replaceFromTo(

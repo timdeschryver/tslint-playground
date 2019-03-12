@@ -1,3 +1,11 @@
+import {
+  RuntimeChecks,
+  Store,
+  StoreModule,
+  META_REDUCERS,
+  ~~~~~~~~~~~~~      [error-message]
+} from '@ngrx/store';
+
 TestBed.configureTestingModule({
   imports: [
     StoreModule.forRoot(
