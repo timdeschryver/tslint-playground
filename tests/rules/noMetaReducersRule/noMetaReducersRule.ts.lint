@@ -1,0 +1,30 @@
+TestBed.configureTestingModule({
+  imports: [
+    StoreModule.forRoot(
+      {},
+      {
+        metaReducers: [metaReducerFactory('user')],
+      }
+    ),
+  ],
+  providers: [
+    {
+      provide: META_REDUCERS,
+               ~~~~~~~~~~~~~      [error-message]
+      useValue: [
+        metaReducerFactory('internal-multi-1'),
+        metaReducerFactory('internal-multi-2'),
+      ],
+      multi: true,
+    },
+    {
+      provide: META_REDUCERS,
+               ~~~~~~~~~~~~~      [error-message]
+      useValue: metaReducerFactory('internal-single'),
+      multi: true,
+    },
+  ],
+})
+
+
+[error-message]: Use the USER_PROVIDED_META_REDUCERS meta-reducer to provide custom meta-reducers

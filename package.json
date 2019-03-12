@@ -1,0 +1,25 @@
+{
+  "name": "tslint-playground",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "test": "rimraf ./dist && tsc -p . && tslint --test tests/rules/noMetaReducersRule"
+  },
+  "author": "Tim Deschryver",
+  "license": "MIT",
+  "dependencies": {
+    "@phenomnomnominal/tsquery": "^3.0.0",
+    "tslint": "^5.13.1",
+    "typescript": "^3.3.3333"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "@types/node": "^11.11.2",
+    "jest": "^24.5.0",
+    "prettier": "^1.16.4",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.0.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1"
+  }
+}
